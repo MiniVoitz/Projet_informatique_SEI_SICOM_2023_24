@@ -1,0 +1,40 @@
+
+
+# Start pyc-objdump output
+# le tuple est cree a la main dans les .consts (python -m compileall  ne genere pas de tuple nestes dans les .const)
+
+.set version_pyvm	 62211
+.set flags		 0x00000040
+.set filename		 "nested_tuple.py"
+.set name		 "<module>"
+.set stack_size		 5
+.set arg_count		 0
+
+.interned
+	"a"
+	"<module>"
+
+.consts
+	1
+	2
+	3
+	4
+	5
+	None
+	( 1 2 ( 3 4 5 ) )
+
+.names
+	"a"
+
+.text
+.line 1
+	LOAD_NAME             6	# ( 1 2 ( 3 4 5 ) )
+	STORE_NAME            0	# "a"
+.line 2
+	LOAD_NAME             0	# "a"
+	PRINT_ITEM
+	PRINT_NEWLINE
+	LOAD_CONST            5	# None
+	RETURN_VALUE
+
+# Disassembled Mon Nov  1 05:16:09 2021

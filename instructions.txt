@@ -1,0 +1,103 @@
+STOP_CODE                    Opcodes : 0x00 | 0x00
+POP_TOP                      Opcodes : 0x01 | 0x01
+ROT_TWO                      Opcodes : 0x02 | 0x02
+ROT_THREE                    Opcodes : 0x03 | 0x03
+DUP_TOP                      Opcodes : 0x04 | 0x04
+DUP_TOP_TWO                  Opcodes : –––– | 0x05
+ROT_FOUR                     Opcodes : 0x05 | 0x06
+NOP                          Opcodes : 0x09 | 0x09
+UNARY_POSITIVE               Opcodes : 0x0a | 0x0a
+UNARY_NEGATIVE               Opcodes : 0x0b | 0x0b
+UNARY_NOT                    Opcodes : 0x0c | 0x0c
+UNARY_CONVERT                Opcodes : 0x0d | ––––
+UNARY_INVERT                 Opcodes : 0x0f | 0x0f
+BINARY_MATRIX_MULTIPLY       Opcodes : –––– | 0x10
+INPLACE_MATRIX_MULTIPLY      Opcodes : –––– | 0x11
+BINARY_POWER                 Opcodes : 0x13 | 0x13
+BINARY_MULTIPLY              Opcodes : 0x14 | 0x14
+BINARY_DIVIDE                Opcodes : 0x15 | ––––
+BINARY_MODULO                Opcodes : 0x16 | 0x16
+BINARY_ADD                   Opcodes : 0x17 | 0x17
+BINARY_SUBTRACT              Opcodes : 0x18 | 0x18
+BINARY_SUBSCR                Opcodes : 0x19 | 0x19
+BINARY_FLOOR_DIVIDE          Opcodes : 0x1a | 0x1a
+BINARY_TRUE_DIVIDE           Opcodes : 0x1b | 0x1b
+INPLACE_FLOOR_DIVIDE         Opcodes : 0x1c | 0x1c
+INPLACE_TRUE_DIVIDE          Opcodes : 0x1d | 0x1d
+SLICE                        Opcodes : 0x1e | ––––
+SLICE_PLUS_1                 Opcodes : 0x1f | ––––
+SLICE_PLUS_2                 Opcodes : 0x20 | ––––
+SLICE_PLUS_3                 Opcodes : 0x21 | ––––
+STORE_SLICE                  Opcodes : 0x28 | ––––
+STORE_SLICE_PLUS_1           Opcodes : 0x29 | ––––
+STORE_SLICE_PLUS_2           Opcodes : 0x2a | ––––
+STORE_SLICE_PLUS_3           Opcodes : 0x2b | ––––
+DELETE_SLICE                 Opcodes : 0x32 | ––––
+GET_AITER                    Opcodes : –––– | 0x32
+DELETE_SLICE_PLUS_1           Opcodes: 0x33 | ––––
+GET_ANEXT                     Opcodes: –––– | 0x33
+DELETE_SLICE_PLUS_2           Opcodes: 0x34 | ––––
+BEFORE_ASYNC_WITH             Opcodes: –––– | 0x34
+DELETE_SLICE_PLUS_3           Opcodes: 0x35 | ––––
+BEGIN_FINALLY                 Opcodes: –––– | 0x35
+STORE_MAP                     Opcodes: 0x36 | ––––
+END_ASYNC_FOR                 Opcodes: –––– | 0x36
+INPLACE_ADD                   Opcodes: 0x37 | 0x37
+INPLACE_SUBTRACT              Opcodes: 0x38 | 0x38
+INPLACE_MULTIPLY              Opcodes: 0x39 | 0x39
+INPLACE_DIVIDE                Opcodes: 0x3a | ––––
+INPLACE_MODULO                Opcodes: 0x3b | 0x3b
+STORE_SUBSCR                  Opcodes: 0x3c | 0x3c
+DELETE_SUBSCR                 Opcodes: 0x3d | 0x3d
+BINARY_LSHIFT                 Opcodes: 0x3e | 0x3e
+BINARY_RSHIFT                 Opcodes: 0x3f | 0x3f
+BINARY_AND                    Opcodes: 0x40 | 0x40
+BINARY_XOR                    Opcodes: 0x41 | 0x41
+BINARY_OR                     Opcodes: 0x42 | 0x42
+INPLACE_POWER                 Opcodes: 0x43 | 0x43
+GET_ITER                      Opcodes: 0x44 | 0x44
+GET_YIELD_FROM_ITER           Opcodes: –––– | 0x45
+PRINT_EXPR                    Opcodes: 0x46 | 0x46
+PRINT_ITEM                    Opcodes: 0x47 | ––––
+LOAD_BUILD_CLASS              Opcodes: –––– | 0x47
+PRINT_NEWLINE                 Opcodes: 0x48 | ––––
+YIELD_FROM                    Opcodes: –––– | 0x48
+PRINT_ITEM_TO                 Opcodes: 0x49 | ––––
+GET_AWAITABLE                 Opcodes: –––– | 0x49
+PRINT_NEWLINE_TO              Opcodes: 0x4a | ––––
+INPLACE_LSHIFT                Opcodes: 0x4b | 0x4b
+INPLACE_RSHIFT                Opcodes: 0x4c | 0x4c
+INPLACE_AND                   Opcodes: 0x4d | 0x4d
+INPLACE_XOR                   Opcodes: 0x4e | 0x4e
+INPLACE_OR                    Opcodes: 0x4f | 0x4f
+BREAK_LOOP                    Opcodes: 0x50 | ––––
+WITH_CLEANUP                  Opcodes: 0x51 | ––––
+WITH_CLEANUP_START            Opcodes: –––– | 0x51
+LOAD_LOCALS                   Opcodes: 0x52 | ––––
+WITH_CLEANUP_FINISH           Opcodes: –––– | 0x52
+RETURN_VALUE                  Opcodes: 0x53 | 0x53
+IMPORT_STAR                   Opcodes: 0x54 | 0x54
+EXEC_STMT                     Opcodes: 0x55 | ––––
+SETUP_ANNOTATIONS             Opcodes: –––– | 0x55
+SETUP_EXCEPT opcodes: 0x79 | ––––
+SETUP_FINALLY opcodes: 0x7a | 0x7a
+LOAD_FAST opcodes: 0x7c | 0x7c
+STORE_FAST opcodes: 0x7d | 0x7d
+DELETE_FAST opcodes: 0x7e | 0x7e
+RAISE_VARARGS opcodes: 0x82 | 0x82
+CALL_FUNCTION opcodes: 0x83 | 0x83
+MAKE_FUNCTION opcodes: 0x84 | 0x84
+BUILD_SLICE opcodes: 0x85 | 0x85
+MAKE_CLOSURE opcodes: 0x86 | ––––
+LOAD_CLOSURE opcodes: 0x87 | 0x87
+LOAD_DEREF opcodes: 0x88 | 0x88
+STORE_DEREF opcodes: 0x89 | 0x89
+DELETE_DEREF opcodes: –––– | 0x8a
+CALL_FUNCTION_VAR opcodes: 0x8c | ––––
+CALL_FUNCTION_KW opcodes: 0x8d | 0x8d
+CALL_FUNCTION_VAR_KW opcodes: 0x8e | ––––
+CALL_FUNCTION_EX opcodes: –––– | 0x8e
+SETUP_WITH opcodes: 0x8f | 0x8f
+EXTENDED_ARG opcodes: 0x91 | 0x90
+SET_ADD opcodes: 0x92 | 0x92
+MAP_ADD opcodes: 0x93 | 0x93

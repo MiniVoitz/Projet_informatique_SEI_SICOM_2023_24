@@ -1,0 +1,4 @@
+
+.line 1
+	LOaD_CONST            0	# "hello world"
+

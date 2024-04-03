@@ -1,0 +1,62 @@
+-------------------------------
+-----AFFICHAGE DU CODEBLOCK----
+-------------------------------
+-------------------------------
+------AFFICHAGE HEADER---------
+-------------------------------
+Version_pyvm : 62211 
+Flags : 64 en decimal 
+arg_count : 0 
+arg_count : 2 
+-------------------------------
+------AFFICHAGE Content--------
+-------------------------------
+interned : 
+Type : '[', je dois te voir voici la taille 3Type : 's', Value : "a"
+Type : 's', Value : "b"
+Type : 's', Value : "<module>"
+constantes : 
+Type : '[', je dois te voir voici la taille 4Type : 's', Value : "hello world"
+Type : 'i',  int 2 
+Type : 'i',  int 4 
+Type : 'N', None
+names : 
+Type : '[', je dois te voir voici la taille 2Type : 's', Value : "a"
+Type : 's', Value : "b"
+bytecode provisoire: 
+Type : '[', je dois te voir voici la taille 28Type : 's', Value : Line
+Type : 's', Value : 640
+Type : 's', Value : 47
+Type : 's', Value : 48
+Type : 's', Value : Line
+Type : 's', Value : 641
+Type : 's', Value : 5a0
+Type : 's', Value : Line
+Type : 's', Value : 642
+Type : 's', Value : 5a1
+Type : 's', Value : Line
+Type : 's', Value : 650
+Type : 's', Value : 651
+Type : 's', Value : 6b0
+Type : 's', Value : 72label_0
+Type : 's', Value : Line
+Type : 's', Value : 650
+Type : 's', Value : 47
+Type : 's', Value : 48
+Type : 's', Value : 6elabel_1
+Type : 's', Value : Line
+Type : 's', Value : label_0
+Type : 's', Value : 651
+Type : 's', Value : 47
+Type : 's', Value : 48
+Type : 's', Value : label_1
+Type : 's', Value : 643
+Type : 's', Value : 53
+-------------------------------
+------AFFICHAGE TRAILER--------
+-------------------------------
+filename : Type : 's', Value : "test1.py"
+name : Type : 's', Value : "<module>"
+-------------------------------
+-------FIN DU CODEBLOCK--------
+-------------------------------

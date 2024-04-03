@@ -1,0 +1,187 @@
+# Regular Expressions for Lexemes
+
+# Lexemes providing the code structure
+comment           \#^[\n]*          # Matches Python-style comments
+blank             [ \t]+            # Matches spaces and tabs
+newline           [\n]+             # Matches one or more newline characters
+
+# Lexemes describing different kinds of constants
+paren::left       (                # Matches a left parenthesis
+paren::right      )                # Matches a right parenthesis
+brack::left       \[                # Matches a left bracket
+brack::right      \]                # Matches a right bracket
+brack::Curlyleft  {                # Matches a left Curly bracket
+brack::Curlyright }                # Matches a right Curly bracket
+
+#
+integer::hex      0x[0-9a-fA-F]+    # Matches hexadecimal integers, case insensitive
+integer::dec      [\+\-]?[0-9]+      # Matches decimal integers, optionally signed
+
+#
+float             [0-9]*\.[0-9]+    # Matches floating-point numbers
+float::exp        [0-9]+\.?[0-9]*[eE][\+\-]?[0-9]+  # Matches floating-point numbers in scientific notation
+
+#
+pycst::None       None              # Matches the Python constant None
+pycst::True       True              # Matches the Python constant True
+pycst::False      False             # Matches the Python constant False
+
+#lexem for insn::1|0::opcode
+
+insn::0::00 STOP_CODE #
+insn::0::01 POP_TOP #
+insn::0::02 ROT_TWO #
+insn::0::03 ROT_THREE #
+insn::0::04 DUP_TOP #
+insn::0::05 ROT_FOUR #
+insn::0::09 NOP #
+insn::0::0a UNARY_POSITIVE #
+insn::0::0b UNARY_NEGATIVE #
+insn::0::0c UNARY_NOT #
+insn::0::0d UNARY_CONVERT #
+insn::0::0f UNARY_INVERT #
+insn::0::13 BINARY_POWER #
+insn::0::14 BINARY_MULTIPLY #
+insn::0::15 BINARY_DIVIDE #
+insn::0::16 BINARY_MODULO #
+insn::0::17 BINARY_ADD #
+insn::0::18 BINARY_SUBTRACT #
+insn::0::19 BINARY_SUBSCR #
+insn::0::1a BINARY_FLOOR_DIVIDE #
+insn::0::1b BINARY_TRUE_DIVIDE #
+insn::0::1c INPLACE_FLOOR_DIVIDE #
+insn::0::1d INPLACE_TRUE_DIVIDE #
+insn::0::1e SLICE #
+insn::0::1f SLICE_PLUS_1 #
+insn::0::20 SLICE_PLUS_2 #
+insn::0::21 SLICE_PLUS_3 #
+insn::0::28 STORE_SLICE #
+insn::0::29 STORE_SLICE_PLUS_1 #
+insn::0::2a STORE_SLICE_PLUS_2 #
+insn::0::2b STORE_SLICE_PLUS_3 #
+insn::0::32 DELETE_SLICE #
+insn::0::33 DELETE_SLICE_PLUS_1 #
+insn::0::34 DELETE_SLICE_PLUS_2 #
+insn::0::35 DELETE_SLICE_PLUS_3 #
+insn::0::36 STORE_MAP #
+insn::0::37 INPLACE_ADD #
+insn::0::38 INPLACE_SUBTRACT #
+insn::0::39 INPLACE_MULTIPLY #
+insn::0::3a INPLACE_DIVIDE #
+insn::0::3b INPLACE_MODULO #
+insn::0::3c STORE_SUBSCR #
+insn::0::3d DELETE_SUBSCR #
+insn::0::3e BINARY_LSHIFT #
+insn::0::3f BINARY_RSHIFT #
+insn::0::40 BINARY_AND #
+insn::0::41 BINARY_XOR #
+insn::0::42 BINARY_OR #
+insn::0::43 INPLACE_POWER #
+insn::0::44 GET_ITER #
+insn::0::46 PRINT_EXPR #
+insn::0::47 PRINT_ITEM #
+insn::0::48 PRINT_NEWLINE #
+insn::0::49 PRINT_ITEM_TO #
+insn::0::4a PRINT_NEWLINE_TO #
+insn::0::4b INPLACE_LSHIFT #
+insn::0::4c INPLACE_RSHIFT #
+insn::0::4d INPLACE_AND #
+insn::0::4e INPLACE_XOR #
+insn::0::4f INPLACE_OR #
+insn::0::50 BREAK_LOOP #
+insn::0::51 WITH_CLEANUP #
+insn::0::52 LOAD_LOCALS #
+insn::0::53 RETURN_VALUE #
+insn::0::54 IMPORT_STAR #
+insn::0::55 EXEC_STMT #
+insn::0::56 YIELD_VALUE #
+insn::0::57 POP_BLOCK #
+insn::0::58 END_FINALLY #
+insn::0::59 BUILD_CLASS #
+insn::1::5a STORE_NAME #
+insn::1::5b DELETE_NAME #
+insn::1::5c UNPACK_SEQUENCE #
+insn::1::5d FOR_ITER #
+insn::1::5e LIST_APPEND #
+insn::1::5f STORE_ATTR #
+insn::1::60 DELETE_ATTR #
+insn::1::61 STORE_GLOBAL #
+insn::1::62 DELETE_GLOBAL #
+insn::1::63 DUP_TOPX #
+insn::1::64 LOAD_CONST #
+insn::1::65 LOAD_NAME #
+insn::1::66 BUILD_TUPLE #
+insn::1::67 BUILD_LIST #
+insn::1::68 BUILD_SET #
+insn::1::69 BUILD_MAP #
+insn::1::6a LOAD_ATTR #
+insn::1::6b COMPARE_OP #
+insn::1::6c IMPORT_NAME #
+insn::1::6d IMPORT_FROM #
+insn::1::6e JUMP_FORWARD #
+insn::1::6f JUMP_IF_FALSE_OR_POP #
+insn::1::70 JUMP_IF_TRUE_OR_POP #
+insn::1::71 JUMP_ABSOLUTE #
+insn::1::72 POP_JUMP_IF_FALSE #
+insn::1::73 POP_JUMP_IF_TRUE #
+insn::1::74 LOAD_GLOBAL #
+insn::1::77 CONTINUE_LOOP #
+insn::1::78 SETUP_LOOP #
+insn::1::79 SETUP_EXCEPT #
+insn::1::7a SETUP_FINALLY #
+insn::1::7c LOAD_FAST #
+insn::1::7d STORE_FAST #
+insn::1::7e DELETE_FAST #
+insn::1::82 RAISE_VARARGS #
+insn::1::83 CALL_FUNCTION #
+insn::1::84 MAKE_FUNCTION #
+insn::1::85 BUILD_SLICE #
+insn::1::86 MAKE_CLOSURE #
+insn::1::87 LOAD_CLOSURE #
+insn::1::88 LOAD_DEREF #
+insn::1::89 STORE_DEREF #
+insn::1::8c CALL_FUNCTION_VAR #
+insn::1::8d CALL_FUNCTION_KW #
+insn::1::8e CALL_FUNCTION_VAR_KW #
+insn::1::8f SETUP_WITH #
+insn::1::91 EXTENDED_ARG #
+insn::1::92 SET_ADD #
+insn::1::93 MAP_ADD #
+
+
+#Lexem for string
+
+string            "^"*"   # Matches strings, allowing for escaped characters
+
+symbol::version_pyvm            version_pyvm    # Matches version_pyvm directives
+symbol::flags                   flags           # Matches version_pyvm directives
+symbol::filename                filename        # Matches version_pyvm directives
+symbol::name                    name            # Matches version_pyvm directives
+symbol::stack_size              stack_size      # Matches version_pyvm directives
+symbol::arg_count               arg_count       # Matches version_pyvm directives
+symbol::source_size             source_size     # Matches version_pyvm directives
+symbol::kwonly_arg_count        kwonly_arg_count     # Matches version_pyvm directives
+symbol::posonly_arg_count       posonly_arg_count     # Matches version_pyvm directives
+symbol            [a-zA-Z_\-\\][a-zA-Z0-9_]*    # Matches symbols/identifiers
+comma             ,                 		# Matches comma
+
+
+
+# Lexeme describing the mnemonics of the bytecode instruction set
+insn              [A-Z_]+           # Matches bytecode instructions, uppercase with underscores
+
+# Lexeme describing a directive that structures the bytecode
+dir::text         \.text    #matches .text 
+dir::set          \.set    #ssrger
+dir::interned     \.interned   #ergerg
+dir::consts       \.consts  #gerger
+dir::names        \.names   #gerg
+dir::varnames     \.varnames   #gerg
+dir::freevars     \.freevars    #gerg
+dir::cellvars     \.cellvars   #gerg
+dir::line         \.line     #gege
+
+dir               \.[a-zA-Z_][a-zA-Z0-9_]*         #Matches dot-prefixed directives
+
+# To create labels for structuring Python assembly code
+colon             :                 # Matches a colon

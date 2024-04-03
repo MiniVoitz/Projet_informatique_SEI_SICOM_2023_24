@@ -1,0 +1,58 @@
+
+
+# Start pyc-objdump output
+
+/set version_pyvm	 62211
+.set flags		 0x00000040
+.set filename		 "test1.py"
+.set name		 "<module>"
+.set stack_size		 2
+.set arg_count		 0
+
+.interned
+	"a"
+	"b"
+	"<module>"
+
+.consts
+	"hello world"
+	2
+	4
+	None
+
+.names
+	"a"
+	"b"
+
+.text
+.line 1
+	LOAD_CONST            0	# "hello world"
+	PRINT_ITEM            
+	PRINT_NEWLINE         
+.line 2
+	LOAD_CONST            1	# 2
+	STORE_NAME            0	# "a"
+.line 3
+	LOAD_CONST            2	# 4
+	STORE_NAME            1	# "b"
+.line 4
+	LOAD_NAME             0	# "a"
+	LOAD_NAME             1	# "b"
+	COMPARE_OP            0	# <
+	POP_JUMP_IF_FALSE     label_0
+.line 5
+	LOAD_NAME             0	# "a"
+	PRINT_ITEM            
+	PRINT_NEWLINE         
+	JUMP_FORWARD          label_1
+.line 7
+label_0:
+	LOAD_NAME             1	# "b"
+	PRINT_ITEM            
+	PRINT_NEWLINE         
+label_1:
+	LOAD_CONST            3	# None
+	RETURN_VALUE          
+
+# Disassembled Tue Oct 24 10:41:06 2023
+

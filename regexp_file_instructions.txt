@@ -1,0 +1,104 @@
+# Regular Expressions for Lexemes
+
+# Lexemes providing the code structure
+comment           \#^[\n]*          # Matches Python-style comments
+blank             [ \t]+            # Matches spaces and tabs
+newline           [\n]+             # Matches one or more newline characters
+
+# Lexemes describing different kinds of constants
+paren::left       (                # Matches a left parenthesis
+paren::right      )                # Matches a right parenthesis
+brack::left       \[                # Matches a left bracket
+brack::right      \]                # Matches a right bracket
+brack::Curlyleft  {                # Matches a left Curly bracket
+brack::Curlyright }                # Matches a right Curly bracket
+
+#
+integer::dec      [\+\-]?[0-9]+      # Matches decimal integers, optionally signed
+integer::hex      0x[0-9a-fA-F]+    # Matches hexadecimal integers, case insensitive
+
+#
+float             [0-9]*\.[0-9]+    # Matches floating-point numbers
+float::exp        [0-9]+\.?[0-9]*[eE][\+\-]?[0-9]+  # Matches floating-point numbers in scientific notation
+
+#
+string            "^"*"   # Matches strings, allowing for escaped characters
+symbol            [a-zA-Z_\-][a-zA-Z0-9_]*           # Matches symbols/identifiers
+comma             ,                 # Matches comma
+
+#
+pycst::None       None              # Matches the Python constant None
+pycst::True       True              # Matches the Python constant True
+pycst::False      False             # Matches the Python constant False
+
+# Lexeme describing the mnemonics of the bytecode instruction set
+insn              [A-Z_]+           # Matches bytecode instructions, uppercase with underscores
+
+# Lexeme describing a directive that structures the bytecode
+dir               \.[a-zA-Z_][a-zA-Z0-9_]*         # Matches dot-prefixed directives
+
+# To create labels for structuring Python assembly code
+colon             :                 # Matches a colon
+
+# Lexeme describing the mnemonics of the bytecode instruction set
+insn              [A-Z_]+           # Matches bytecode instructions, uppercase with underscores
+
+# Expanded to include specific bytecode instructions
+STOP_CODE         \b0x00\b
+POP_TOP           \b0x01\b
+ROT_TWO           \b0x02\b
+ROT_THREE         \b0x03\b
+DUP_TOP           \b0x04\b
+ROT_FOUR          \b0x05\b
+NOP               \b0x09\b
+UNARY_POSITIVE    \b0x0a\b
+UNARY_NEGATIVE    \b0x0b\b
+UNARY_NOT         \b0x0c\b
+UNARY_INVERT      \b0x0f\b
+BINARY_POWER      \b0x13\b
+BINARY_MULTIPLY   \b0x14\b
+BINARY_MODULO     \b0x16\b
+BINARY_ADD        \b0x17\b
+BINARY_SUBTRACT   \b0x18\b
+BINARY_SUBSCR     \b0x19\b
+BINARY_FLOOR_DIVIDE \b0x1a\b
+BINARY_TRUE_DIVIDE  \b0x1b\b
+INPLACE_FLOOR_DIVIDE \b0x1c\b
+INPLACE_TRUE_DIVIDE  \b0x1d\b
+INPLACE_ADD        \b0x37\b
+INPLACE_SUBTRACT   \b0x38\b
+INPLACE_MULTIPLY   \b0x39\b
+INPLACE_MODULO     \b0x3b\b
+STORE_SUBSCR       \b0x3c\b
+DELETE_SUBSCR      \b0x3d\b
+BINARY_LSHIFT      \b0x3e\b
+BINARY_RSHIFT      \b0x3f\b
+BINARY_AND         \b0x40\b
+BINARY_XOR         \b0x41\b
+BINARY_OR          \b0x42\b
+INPLACE_POWER      \b0x43\b
+GET_ITER           \b0x44\b
+PRINT_EXPR         \b0x46\b
+RETURN_VALUE       \b0x53\b
+IMPORT_STAR        \b0x54\b
+INPLACE_LSHIFT     \b0x4b\b
+INPLACE_RSHIFT     \b0x4c\b
+INPLACE_AND        \b0x4d\b
+INPLACE_XOR        \b0x4e\b
+INPLACE_OR         \b0x4f\b
+SETUP_FINALLY      \b0x7a\b
+LOAD_FAST          \b0x7c\b
+STORE_FAST         \b0x7d\b
+DELETE_FAST        \b0x7e\b
+RAISE_VARARGS      \b0x82\b
+CALL_FUNCTION      \b0x83\b
+MAKE_FUNCTION      \b0x84\b
+BUILD_SLICE        \b0x85\b
+LOAD_CLOSURE       \b0x87\b
+LOAD_DEREF         \b0x88\b
+STORE_DEREF        \b0x89\b
+CALL_FUNCTION_KW   \b0x8d\b
+SETUP_WITH         \b0x8f\b
+EXTENDED_ARG       \b0x90\b
+SET_ADD            \b0x92\b
+MAP_ADD            \b0x93\b
