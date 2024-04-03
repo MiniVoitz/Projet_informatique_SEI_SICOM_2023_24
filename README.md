@@ -1,4 +1,6 @@
-# README Projet informatique SEI SICOM 2022-23
+# README Projet informatique SEI SICOM 2023-24
+
+(English Version Below)
 
 ## Contenue :
 
@@ -116,3 +118,131 @@ La fonction pyasm prend en entrée notre pyobj_t qui a été partiellement compl
   ```bash
    ./bin/pyasm.exe 'regexp_file.txt' 'test.pys'
    ```
+
+Notes :
+
+Par manque de temps nous n'avons pas pu debuger la prise en charge de label dans le fichier compilé.
+
+
+
+---
+
+
+
+# README English Version Computer Science Project SEI SICOM 2023-24
+
+## Contents:
+
+On this git, you will find our programs classified by folder:
+
+- include: contains all our header files.
+- prog: contains the two main functions of our project.
+- src: contains the source code useful for our programs.
+- tests: contains a portion of our conducted tests.
+
+## Deliverable 1:
+
+### Objectives:
+
+This project has several aims. Initially, one function performs the parsing of a regular expression. If the provided regular expression is erroneous, we detail the error as much as possible. Otherwise, the function explicates its parsing. Then, a second function verifies if a character string contains, in its initial characters, a "word" that satisfies the regular expression.
+
+### Functioning:
+
+For parsing:
+
+
+The regexp-read.c function allows parsing a regular expression. Its execution is as follows:
+
+```bash
+./bin/prog/regexp-read.exe 'regular_expression'
+```
+
+For matching:
+
+
+The regexp-match.c function allows matching a regular expression. Its execution is as follows:
+```bash
+./bin/prog/matching.exe 'regular_expression' 'character_string'
+```
+
+## Deliverable 2:
+
+### Objectives:
+
+Deliverable 2 of our project follows the continuity of Deliverable 1. The main objective is to extend the functionalities of our program to include reading a source file containing regular expressions, as well as a source file (.py). Then, we can perform lexical analysis of the source file by searching for matches with the given regular expressions in the text file.
+
+### Functioning:
+
+To use our program in Deliverable 2:
+
+1. **Reading source files and regular expressions**:
+
+   The `read_fic` function allows us to transform the given files as arguments into a character string.
+
+2. **Reading and matching**:
+
+   The main function `lex` takes as parameters a pointer to the beginning of a character string representing the regular expressions (coming from `regexp_file.txt`) and another pointer to the beginning of a character string representing the source file (`.pys`). It performs matching between the regular expressions found in the file and our source code.
+
+3. **Execution**:
+
+   To execute the program, use the following command:
+   
+   ```bash
+   ./bin/lexer.exe 'regexp_file.txt' 'test1.pys'
+   ```
+
+   This command will read the regular expressions from the file `regexp_file.txt`, analyze the source file `test1.pys`, and display the results.
+
+   Additionally, it is possible to hide unnecessary regular expressions such as blanks, comments, and newlines by adding --no-`what_you_do_not_want`. It is of course possible to delete everything at once, and the order does not matter.
+
+Execution examples:
+
+   ```bash
+   ./bin/lexer.exe 'regexp_file.txt' 'test.pys' --no-blanks
+   ```
+
+   ```bash
+   ./bin/lexer.exe 'regexp_file.txt' 'test.pys' --no-comments --no-blanks --no-newline
+   ```
+
+## Deliverable 3
+
+## Objectives:
+
+The main objective of Deliverable 3 is to implement the `pyobj_t parse(list_t *lexems)` function, which will perform the syntax analysis of the Python assembly language. It will return a Python object of type code or NULL in case of syntax error, displaying and locating this error.
+
+### Functioning:
+
+The parse function takes a list of lexemes obtained through Deliverable 2 as input. It returns a Python object of type code if the analysis is successful, otherwise it returns NULL in case of syntax error. Errors are displayed and located to facilitate debugging.
+
+### Execution Example:
+
+To analyze a Python assembly source file, use the following command:
+
+```bash
+./bin/parser.exe regexp_file.txt test.pys
+```
+
+## Deliverable 4
+
+## Objectives:
+
+This final deliverable completes the filling of the pyobj associated with our source code. This deliverable allows displaying the bytecode and lnotab of our pyobj. Additionally, it creates a .pyc file that can be executed using the following command:
+
+```bash
+python2.7 file_name.pyc
+```
+
+### Functioning:
+
+The pyasm function takes our partially completed pyobj_t from Deliverable 3 as input. This function then adds the bytecode and lnotab to it. Finally, the write function allows creating a .pyc file from our complete pyobj_t, which will finally execute the code.
+
+### Execution Example:
+
+```bash
+./bin/pyasm.exe 'regexp_file.txt' 'test.pys'
+```
+
+Notes:
+
+Due to time constraints, we were unable to debug the support for labels in the compiled file.
